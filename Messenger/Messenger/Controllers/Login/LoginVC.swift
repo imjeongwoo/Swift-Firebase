@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class LoginVC: UIViewController {
     
@@ -138,6 +139,16 @@ class LoginVC: UIViewController {
         
         // Firebase Login
         
+        FirebaseAuth.Auth.auth().signIn(withEmail: email, password: password) { authReulst, error in
+            
+            guard let result = authReulst, error == nil else {
+                print("로그인 에러발생: \(errSecMissingAttributeKey)")
+                return
+            }
+            
+            let user = result.user
+            print("로그인 유저: \(user)")
+        }
     }
     
     func alertUserLoginError() {

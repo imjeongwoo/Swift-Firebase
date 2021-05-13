@@ -7,6 +7,7 @@
 
 import UIKit
 import Photos
+import FirebaseAuth
 
 class RegisterVC: UIViewController {
     
@@ -19,7 +20,7 @@ class RegisterVC: UIViewController {
     
     private let imageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(systemName: "person")
+        imageView.image = UIImage(systemName: "person.circle")
         imageView.tintColor = .gray
         imageView.contentMode = .scaleAspectFit
         imageView.layer.masksToBounds = true
@@ -197,6 +198,15 @@ class RegisterVC: UIViewController {
         
         // Firebase Login
         
+        FirebaseAuth.Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+            guard let result = authResult, error == nil else {
+                print("에러가 발생했습니다.")
+                return
+            }
+            
+            let user = result.user
+            print("Create user: \(user)")
+        }
     }
     
     func alertUserLoginError() {
