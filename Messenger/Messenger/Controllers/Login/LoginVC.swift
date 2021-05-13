@@ -74,9 +74,9 @@ class LoginVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Login"
+        title = "로그인"
         view.backgroundColor = .white
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Register",
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "회원가입",
                                                             style: .done,
                                                             target: self,
                                                             action: #selector(didTapRegister))

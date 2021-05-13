@@ -254,6 +254,7 @@ extension RegisterVC: UIImagePickerControllerDelegate, UINavigationControllerDel
         
         present(actionSheet, animated: true, completion: nil)
     }
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true, completion: nil)
         print(info)
