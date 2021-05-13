@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		881DF9FB264D8BD600DCEA9B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 881DF9FA264D8BD600DCEA9B /* GoogleService-Info.plist */; };
+		881DF9FD264D93ED00DCEA9B /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881DF9FC264D93ED00DCEA9B /* DatabaseManager.swift */; };
 		88DE550B264D3AD7001AEFEE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DE550A264D3AD7001AEFEE /* AppDelegate.swift */; };
 		88DE550D264D3AD7001AEFEE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DE550C264D3AD7001AEFEE /* SceneDelegate.swift */; };
 		88DE550F264D3AD7001AEFEE /* ConversationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DE550E264D3AD7001AEFEE /* ConversationVC.swift */; };
@@ -28,6 +29,7 @@
 		02B9A36AEBF9C9E3F5727FA7 /* Pods-Messenger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Messenger.release.xcconfig"; path = "Target Support Files/Pods-Messenger/Pods-Messenger.release.xcconfig"; sourceTree = "<group>"; };
 		2894EFD0AC285010CF20F400 /* Pods_Messenger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Messenger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		881DF9FA264D8BD600DCEA9B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		881DF9FC264D93ED00DCEA9B /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		88DE5507264D3AD7001AEFEE /* Messenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Messenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88DE550A264D3AD7001AEFEE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88DE550C264D3AD7001AEFEE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				88DE550A264D3AD7001AEFEE /* AppDelegate.swift */,
 				88DE550C264D3AD7001AEFEE /* SceneDelegate.swift */,
 				88DE5531264D44F9001AEFEE /* Extensions.swift */,
+				881DF9FC264D93ED00DCEA9B /* DatabaseManager.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				88DE552D264D3F3E001AEFEE /* NewConversationVC.swift in Sources */,
+				881DF9FD264D93ED00DCEA9B /* DatabaseManager.swift in Sources */,
 				88DE552B264D3F30001AEFEE /* VideoPlayerVC.swift in Sources */,
 				88DE550F264D3AD7001AEFEE /* ConversationVC.swift in Sources */,
 				88DE552F264D3F4E001AEFEE /* ProfileVC.swift in Sources */,

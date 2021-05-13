@@ -197,21 +197,32 @@ class RegisterVC: UIViewController {
         }
         
         // Firebase Login
-        
-        FirebaseAuth.Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
-            guard let result = authResult, error == nil else {
-                print("에러가 발생했습니다.")
+        DatabaseManager.shared.uesrExists(with: email) { [weak self] exists in
+            
+            guard !exists else {
+                // user alreay exists
+                self?.alertUserLoginError(message: "이미 존재하는 메일입니다.")
                 return
+                
             }
             
-            let user = result.user
-            print("Create user: \(user)")
+            FirebaseAuth.Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+                guard authResult != nil, error == nil else {
+                    print("에러가 발생했습니다.")
+                    return
+                }
+                
+                DatabaseManager.shared.insertUser(with: ChatAppUser(nickName: nickName,
+                                                                    emailAddress: email))
+                
+                self?.navigationController?.dismiss(animated: true, completion: nil)
+            }
         }
     }
     
-    func alertUserLoginError() {
+    func alertUserLoginError(message: String = "모든 정보를 입력해주세요.") {
         let alert = UIAlertController(title: "알림",
-                                      message: "모든 정보를 입력해주세요.",
+                                      message: message,
                                       preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "확인",

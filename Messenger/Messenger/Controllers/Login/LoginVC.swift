@@ -139,7 +139,7 @@ class LoginVC: UIViewController {
         
         // Firebase Login
         
-        FirebaseAuth.Auth.auth().signIn(withEmail: email, password: password) { authReulst, error in
+        FirebaseAuth.Auth.auth().signIn(withEmail: email, password: password) { [weak self] authReulst, error in
             
             guard let result = authReulst, error == nil else {
                 print("로그인 에러발생: \(errSecMissingAttributeKey)")
@@ -148,6 +148,8 @@ class LoginVC: UIViewController {
             
             let user = result.user
             print("로그인 유저: \(user)")
+            
+            self?.navigationController?.dismiss(animated: true, completion: nil)
         }
     }
     
